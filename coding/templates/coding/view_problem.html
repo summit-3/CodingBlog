@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Problem Description</title>
+    <link href='https://fonts.googleapis.com/css?family=Andika' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script> -->
+    <style>
+         body{
+       background-image: radial-gradient( circle farthest-corner at -4% -12.9%,  rgba(74,98,110,1) 0.3%, rgba(30,33,48,1) 90.2% );
+            color: darkturquoise;
+            font-family: 'Andika';
+            margin: 20px;
+            letter-spacing: 2px;
+            font-size: 1.3em;
+    }
+    h3{
+        font-size: 1.0em;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    
+    </style>
+   
+</head>
+<body>
+   
+    <h1>{{problem.problem_name}}</h1>
+    <h3>{{problem.problem_description}}</h3> 
+    <br>
+    <h1>Input Format</h1>
+    {% for list in inputList %}
+        <h3>{{list}}</h3>
+    {% endfor %}
+    <br>
+    <h1>Output Format</h1>
+    {% for list in outputList %}
+        <h3>{{list}}</h3>
+    {% endfor %}
+    <br>
+    <h1>Constaints</h1>
+    {% for list in constaintList %}
+        <h3>{{list}}</h3>
+    {% endfor %}
+    <br>
+    <h1>Time Limit</h1>
+    <h3>{{problem.time_limit}}</h3> 
+    <br>
+    <h1>Test Case Explanation</h1>
+    {% for list in exampleList %}
+        <h3>{{list}}</h3> 
+    {% endfor %}
+    <br> <br>
+    <a href="{% url 'compile' problem.id %}"><button type="button" class="btn btn-outline-primary">Code Here</button></a>
+    <a href="{% url 'view_source_code' problem.id %}"><button type="button" class="btn btn-outline-success">Soulution (Sorce Code)</button></a>
+    <a href="{% url 'view_video_link' problem.id %}"><button type="button" class="btn btn-outline-secondary">Video Explanation</button></a>
+
+</body>
+</html>
